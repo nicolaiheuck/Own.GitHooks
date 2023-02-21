@@ -4,5 +4,5 @@ jiraNumber=$(git branch --show-current | grep -E "/[A-Z]{2,6}-[0-9]{4,}" -o | gr
 commitMessage=$(cat "$1")
 
 if [[ "$jiraNumber" != "" ]]; then
-  echo "$jiraNumber: $commitMessage" > "$1"
+  echo "$jiraNumber: ${commitMessage^}" > "$1"
 fi
